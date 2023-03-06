@@ -31,3 +31,5 @@ for i, j in pair:
     value = i * j
     area.append(value)
 print(area)
+a,b=map(int,input().split())
+print(a,b)
