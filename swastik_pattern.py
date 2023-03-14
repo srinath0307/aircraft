@@ -10,9 +10,14 @@ for i in range((n // 2) + 1):  # i= 0, 1, 2
     matrix[0][n - i - 1] = ctr
     matrix[n - i - 1][n - 1] = ctr
     ctr += 1
-for i in range(1, n - 1):
+for i in range(1, n // 2 + 1):
     matrix[n // 2][i] = ctr
-    matrix[i][n // 2] = ctr
+    matrix[n // 2][n - i - 1] = ctr
     ctr += 1
+ctr -= 1
+for i in range(n // 2, n):
+    matrix[i][n // 2] = ctr
+    matrix[n - i - 1][n // 2] = ctr
+    ctr -= 1
 for i in range(n):
     print(*matrix[i])
