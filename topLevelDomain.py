@@ -80,3 +80,26 @@ if len(l1) > len(l2):
 elif len(l1)<len(l2):
     print(l2[-1])
 '''
+
+'''# meeting late comers
+# Path: meetingLateComers.py
+# print the count of members who are late for the meeting after 10.00
+li = input().split()  # input times
+ctr = 0
+for i in li:
+    a, b = map(int, i.split(':'))  # split the time into hours and minutes
+    t = a * 60 + b  # convert the time into minutes
+    if t > 600:  # if the time is greater than 10.00
+        ctr += 1  # increment the counter
+print(ctr)  # print the counter
+'''
+
+'''s = input().strip()
+ind = 0
+li = [i for i in s if i.isalpha()][::-1]
+for i in s:
+    if i.isalpha():
+        print(li[ind], end='')
+        ind += 1
+    else:
+        print(i, end='')'''
