@@ -35,9 +35,9 @@ def createServer():
             clientsocket.shutdown(SHUT_WR)
 
     except KeyboardInterrupt :
-        print("\nShutting down...\n");
+        print("\nShutting down...\n")
     except Exception as exc :
-        print("Error:\n");
+        print("Error:\n")
         print(exc)
 
     serversocket.close()
