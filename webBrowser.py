@@ -13,19 +13,20 @@ while True:
 
 mysock.close()
 '''
-from socket import *
+'''from socket import *
+
 
 def createServer():
     serversocket = socket(AF_INET, SOCK_STREAM)
-    try :
-        serversocket.bind(('localhost',9000))
+    try:
+        serversocket.bind(('localhost', 9000))
         serversocket.listen(5)
-        while(1):
+        while (1):
             (clientsocket, address) = serversocket.accept()
 
             rd = clientsocket.recv(5000).decode()
             pieces = rd.split("\n")
-            if ( len(pieces) > 0 ) : print(pieces[0])
+            if (len(pieces) > 0): print(pieces[0])
 
             data = "HTTP/1.1 200 OK\r\n"
             data += "Content-Type: text/html; charset=utf-8\r\n"
@@ -34,13 +35,37 @@ def createServer():
             clientsocket.sendall(data.encode())
             clientsocket.shutdown(SHUT_WR)
 
-    except KeyboardInterrupt :
+    except KeyboardInterrupt:
         print("\nShutting down...\n")
-    except Exception as exc :
+    except Exception as exc:
         print("Error:\n")
         print(exc)
 
     serversocket.close()
 
+
 print('Access http://localhost:9000')
 createServer()
+'''
+'''s=input().strip()
+ctr=0
+for i in range(len(s)-1):
+    if s[i] not in 'AEIOUaeiou' and s[i+1] not in 'AEIOUaeiou':
+        ctr+=1
+print(ctr)'''
+
+
+class A:
+    def __init__(self, x=3):
+        self._x = x
+
+class stud:
+    def __init__(self, roll_no, grade):
+        self.roll_no = roll_no
+        self.grade = grade
+
+    def display(self):
+        print("Roll no:", self.roll_no, ", Grade:", self.grade)
+
+
+print(stud.__doc__)
